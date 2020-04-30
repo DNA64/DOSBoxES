@@ -25,6 +25,8 @@ To install simply download the Project Eris `.mod` package found under the relea
 
 **A:** The process is different for all games, for now you will need to lookup that information in the games manual. Some games do not have any method of exiting them, because in the old days, there was nothing to exit to. For these and other games you can't find the exit information for, you can use `Alt`+`Ctrl`+`Del` to Escape back to the Project Eris Boot Menu.
 
+Got an question not listed here? Let me know and I'll do my best to answer it, and maybe even add it to the list.
+
 ## Troubleshooting:
 
 Not all games will work right out of the box so to speak. Some may require a special configuration file or initial installation or setup. The good news is, DOSBox has been around for a LONG LONG time. So there is already tons of valuable information out there to help you get these games working and troubleshoot any issues you might have. Also make sure your file isn't corupted. You can do this by comparing it's checksum to a known good one found online.
