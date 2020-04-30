@@ -2,7 +2,7 @@
 
 **NO RETROARCH REQUIRED!**
 
-# About
+## About
 
 Launch DOSBox games via Emulation Station using the [Stand Alone DOSBox release by ModMyClassic](https://classicmodscloud.com/project_eris/mods/1.0.0/dosbox_0.7.4_SONYPSC-cfb0146.mod).
 
