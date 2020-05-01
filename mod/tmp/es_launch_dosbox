@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+#  Copyright (c) 2020 DNA64 (https://github.com/DNA64/DOSBoxES/LICENSE)
+#
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+source "/var/volatile/project_eris.cfg"
+
+flist="${RUNTIME_LOG_PATH}/es_launch_dosbox.txt"
+game_dir="${SUPLEMENTARY_PATH}/launchers/dosbox/application/"
+emulator="${SUPLEMENTARY_PATH}/launchers/dosbox/dosbox"
+config="${SUPLEMENTARY_PATH}/launchers/dosbox/default.cfg"
+
+  [ -f "$flist" ] && rm -f "$flist"
+  find "$game_dir" -regex ".*\.\(EXE\|exe\|COM\|com\|BAT\|bat\|SH\|sh\)" | while IFS= read -r file; do
+    echo -e "$file" >>"$flist"
+  done
+
+  while IFS= read -r line; do
+    app_file=${line##*/}
+    filenames+=("$app_file")
+    echo "$line"
+  done < "$flist"
+  
+   echo "${filenames[@]}"
+  [ -f "$flist" ] && rm -f "$flist"
+  doslaunch="$emulator -c mount c $1 -conf "$config" -fullscreen"
+  gamename=$(basename "$1")
+#echo -n 2 > "/data/power/disable"
+  for index in ${!filenames[*]}; do
+    game=${filenames[index]}
+    if [ "$game" == "$gamename" ]; then
+      echo "$gamename"
+      exit "$($doslaunch)"
+    fi
+  done
+# EOF
