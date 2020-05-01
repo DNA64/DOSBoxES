@@ -1,0 +1,3 @@
+#!/bin/bash
+
+[ -f "/media/project_eris/opt/emulationstation/bin/es_launch_dosbox" ] && rm -f "/media/project_eris/opt/emulationstation/bin/es_launch_dosbox"

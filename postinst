@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mv "/tmp/es_launch_dosbox" "/media/project_eris/opt/emulationstation/bin/es_launch_dosbox"
+
+if ! grep -q "DOSBox Standalone" "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"; then
+  sed -i '/<\/systemList>/ i\
+<system>\
+  <name>pc</name>\
+  <fullname>DOSBox Standalone</fullname>\
+  <path>/media/project_eris/etc/project_eris/SUP/launchers/dosbox/application/</path>\
+  <extension>.sh .SH .exe .EXE .com .COM .bat .BAT</extension>\
+  <command>es_launch_dosbox %ROM%</command>\
+  <platform>pc</platform>\
+  <theme>pc</theme>\
+<\/system>\' "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"
+fi
+
