@@ -37,11 +37,10 @@ config="${SUPLEMENTARY_PATH}/launchers/dosbox/default.cfg"
   [ -f "$flist" ] && rm -f "$flist"
   doslaunch="$emulator -c mount c $1 -conf "$config" -fullscreen"
   gamename=$(basename "$1")
-#echo -n 2 > "/data/power/disable"
+
   for index in ${!filenames[*]}; do
     game=${filenames[index]}
     if [ "$game" == "$gamename" ]; then
-      echo "$gamename"
       exit "$($doslaunch)"
     fi
   done
