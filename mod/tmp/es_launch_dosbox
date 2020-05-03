@@ -33,7 +33,7 @@ case ${1} in
   ;;
 esac
 executable="$gamepath/$gamename"
-doslaunch="$emulator -c mount c $executable -conf $config -fullscreen"
+doslaunch="$emulator -c mount c $executable -conf $config -fullscreen -exit"
 
 exit "$($doslaunch)"
 # EOF
