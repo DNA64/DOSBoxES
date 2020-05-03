@@ -17,32 +17,23 @@
 #
 source "/var/volatile/project_eris.cfg"
 
-flist="${RUNTIME_LOG_PATH}/es_launch_dosbox.txt"
-game_dir="${SUPLEMENTARY_PATH}/launchers/dosbox/application/"
 emulator="${SUPLEMENTARY_PATH}/launchers/dosbox/dosbox"
 config="${SUPLEMENTARY_PATH}/launchers/dosbox/default.cfg"
+tmp_path="${VOLATILE}/tmpgame"
+gamename=$(basename "$1")
 
-  [ -f "$flist" ] && rm -f "$flist"
-  find "$game_dir" -regex ".*\.\(EXE\|exe\|COM\|com\|BAT\|bat\|SH\|sh\)" | while IFS= read -r file; do
-    echo -e "$file" >>"$flist"
-  done
+case ${1} in
+  *\ * )
+  [ -L "$tmp_path" ] && unlink "$tmp_path"
+  ln -s "${1%/*}" "$tmp_path"
+  gamepath="$tmp_path"
+   ;;
+  * )
+  gamepath=${1%/*}
+  ;;
+esac
 
-  while IFS= read -r line; do
-    app_file=${line##*/}
-    filenames+=("$app_file")
-    echo "$line"
-  done < "$flist"
-  
-   echo "${filenames[@]}"
-  [ -f "$flist" ] && rm -f "$flist"
-  doslaunch="$emulator -c mount c $1 -conf "$config" -fullscreen"
-  gamename=$(basename "$1")
-#echo -n 2 > "/data/power/disable"
-  for index in ${!filenames[*]}; do
-    game=${filenames[index]}
-    if [ "$game" == "$gamename" ]; then
-      echo "$gamename"
-      exit "$($doslaunch)"
-    fi
-  done
+doslaunch="$emulator -c mount c $gamepath/$gamename -conf $config -fullscreen"
+
+exit "$($doslaunch)"
 # EOF

@@ -17,9 +17,9 @@
 #
 PKG_PRETTY_NAME="DOSBox Standalone ES"
 PKG_NAME="dosbox-es-standalone"
-VERSION="0.1"
+VERSION="0.2"
 PKG_CREATOR="DNA64"
-MAINTAINER="DNA64 <youremail@gmail.com>"
+MAINTAINER="DNA64 <https:/twitter.com/dna64>"
 PLATFORM="SONYPSC"
 ARCHITECTURE="armhf"
 

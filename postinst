@@ -14,4 +14,3 @@ if ! grep -q "DOSBox Standalone" "/media/project_eris/opt/emulationstation/.emul
   <theme>pc</theme>\
 <\/system>\' "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"
 fi
-
