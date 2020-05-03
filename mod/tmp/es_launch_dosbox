@@ -32,8 +32,8 @@ case ${1} in
   gamepath=${1%/*}
   ;;
 esac
-
-doslaunch="$emulator -c mount c $gamepath/$gamename -conf $config -fullscreen"
+executable="$gamepath/$gamename"
+doslaunch="$emulator -c mount c $executable -conf $config -fullscreen"
 
 exit "$($doslaunch)"
 # EOF
