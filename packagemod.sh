@@ -32,17 +32,19 @@ CONTROL="${PKG_TARGET}/DEBIAN/control"
 modCreation() {
   mkdir -p "${PKG_TARGET}/DEBIAN"
   cp -rf mod/* ${PKG_TARGET}/
-  printf "%s\n" \
+  {
+    printf "%s\n" \
     "Package: ${PKG_NAME}" \
     "Version: ${VERSION}" \
     "Architecture: ${ARCHITECTURE}" \
     "Depends: ${DEPENDS}" \
     "Maintainer: ${MAINTAINER}" \
-    "Description: ${PKG_PRETTY_NAME}" >${CONTROL}
-  cat mod_description.txt >>${CONTROL}
-  echo "Author: ${PKG_CREATOR}" >>${CONTROL}
-  echo "Platform: ${PLATFORM} ${ARCHITECTURE}" >>${CONTROL}
-  echo "Built: $(date)" >>${CONTROL}
+    "Description: ${PKG_PRETTY_NAME}"
+  cat mod_description.txt 
+  echo "Author: ${PKG_CREATOR}" 
+  echo "Platform: ${PLATFORM} ${ARCHITECTURE}" 
+  echo "Built: $(date)"
+  } >>${CONTROL}
 
   [ -f "preinst" ] && cp -rf preinst ${PREINST} && chmod 755 ${PREINST}
   [ -f "postinst" ] && cp -rf postinst ${POSTINST} && chmod 755 ${POSTINST}
@@ -51,13 +53,13 @@ modCreation() {
   dpkg-deb -v --build ${PKG_TARGET}
   mv ${PKG_TARGET}.deb ${PKG_TARGET}.mod
 
-  rm -r ${PKG_TARGET}/
+  rm -r ${PKG_TARGET:?}/
   touch ${PKG_TARGET}.mod
 
 }
 
 clean() {
-  rm -rf ${PKG_TARGET}/ ${PKG_TARGET}.mod
+  rm -rf ${PKG_TARGET:?}/ ${PKG_TARGET}.mod
 }
 
 case "$1" in
