@@ -15,21 +15,24 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-source "/var/volatile/project_eris.cfg"
-
-emulator="${SUPLEMENTARY_PATH}/launchers/dosbox/dosbox"
-config="${SUPLEMENTARY_PATH}/launchers/dosbox/default.cfg"
-tmp_path="${VOLATILE}/tmpgame"
-gamename=$(basename "$1")
+#source "/var/volatile/project_eris.cfg"
+emulator="/media/project_eris/etc/project_eris/SUP/launchers/dosbox/dosbox"
+config="/media/project_eris/etc/project_eris/SUP/launchers/dosbox/default.cfg"
+tmp_path="/var/volatile/tmpgame"
 
 case ${1} in
   *\ * )
   [ -L "$tmp_path" ] && unlink "$tmp_path"
   ln -s "${1%/*}" "$tmp_path"
+  file_name="${1##*/}"
+  no_space="$(echo -e "${file_name}" | tr -d '[:space:]')"
+  ln -s "${1}" "$tmp_path/$no_space"
   gamepath="$tmp_path"
+  gamename="$no_space"
    ;;
   * )
   gamepath=${1%/*}
+  gamename=$(basename "$1")
   ;;
 esac
 executable="$gamepath/$gamename"
