@@ -83,7 +83,7 @@ Got an issue not listed here? Let me know and I'll see what I can do.
 ## Credits:
 
 
-DOSBoxES is the result of a team effort between myself [viral_dna](https://github.com/dna64) (aka DNA64) and [DefKorns](https://defkorns.github.io). 
+DOSBoxES is the result of a team effort between myself [viral_dna](https://github.com/dna64) (aka DNA64) and [DefKorns](https://defkorns.netlify.app). 
 
 
 Additional information found useful during the development of this project can be found at the links below.
