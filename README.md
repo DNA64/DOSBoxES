@@ -79,7 +79,9 @@ Not all games will work right out of the box so to speak. Some may require a spe
 - Filenames with too many characters will not launch. There is a limit of 8 Characters + the extension.
 
   Example: PLAY GAME.EXE - *Working! (*Spaces do not count as they are currently removed)
+  
   Example: Teenage Mutant Ninja Turtles.EXE - Not working!
+  
   It is recommended that if your files do contain spaces, to remove them or replace them with a hyphen "-", or an underscore "_".
 
 
