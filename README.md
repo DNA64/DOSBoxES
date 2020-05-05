@@ -76,11 +76,11 @@ Not all games will work right out of the box so to speak. Some may require a spe
 - Number of "Games Available" is currently not accurate. We plan to address this in a future update, but there is a manual fix and a guide will be published shortly with details.
 - Filenames containing spaces create duplicate entries in the games list.
 - Filenames containing spaces are listed with the spaces removed. Spaces should be replaced with under_scores.
-- Filanames with too many characters will not launch. There is a limit of 8 Characters + the extentsion.
+- Filenames with too many characters will not launch. There is a limit of 8 Characters + the extension.
 
   Example: PLAY GAME.EXE - *Working! (*Spaces do not count as they are currently removed)
   Example: Teenage Mutant Ninja Turtles.EXE - Not working!
-  It is recomended that if your files do contain spaces, to remove them or replace them with a hyphen "-", or an underscore "_".
+  It is recommended that if your files do contain spaces, to remove them or replace them with a hyphen "-", or an underscore "_".
 
 
 Found an issue not listed here? [Click Here](https://github.com/DNA64/DOSBoxES/issues) and fill out a report.
@@ -114,4 +114,3 @@ What started out as a solo project of mine, ended up becoming a team effort betw
 
 
 DefKorns graciously offered to help out and I accepted, and he has been invaluable to the project and an absolute pleasure to work with as always. It took some back and forth ideas for us to perfect it, taking into account things like possible spaces in both folder and filenames as well as few other obstacles, but the end result is this project. - Enjoy!
-
