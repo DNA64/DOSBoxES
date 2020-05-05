@@ -1,0 +1,8 @@
+#!/bin/bash
+
+es_dir="/media/project_eris/opt/emulationstation"
+launcher="${es_dir}/launch.sh"
+
+[ -f "${launcher}" ] && sed -i '/tmpgame/d' "${launcher}"
+
+sed -i -e '/SDL_VIDEODRIVER/r [ -L "/var/volatile/tmpgame" ] && unlink "/var/volatile/tmpgame"' "${es_dir}/launch.sh"
