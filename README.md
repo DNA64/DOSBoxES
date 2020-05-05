@@ -62,7 +62,7 @@ Known Exit Key Combos to return to ES:
 - `Ctrl`+`Q`
 
 
-Got an question not listed here? Let me know and I'll do my best to answer it, and maybe even add it to the list.
+Got an question not listed here? Let us know and we'll do my best to answer it, and maybe even add it to the list.
 
 
 ## Troubleshooting:
@@ -70,14 +70,20 @@ Got an question not listed here? Let me know and I'll do my best to answer it, a
 
 Not all games will work right out of the box so to speak. Some may require a special configuration file or initial installation or setup. The good news is, DOSBox has been around for a LONG LONG time. So there is already tons of valuable information out there to help you get these games working and troubleshoot any issues you might have. Also make sure your file isn't corrupted. You can do this by comparing it's checksum to a known good one found online.
 
-
-**Known Bugs & Issues:**
-
-
-- Number of "Games Available" is currently not accurate. We plan to address this in a future update.
+**Known Bugs, Issues & Limitations:**
 
 
-Got an issue not listed here? Let me know and I'll see what I can do.
+- Number of "Games Available" is currently not accurate. We plan to address this in a future update, but there is a manual fix and a guide will be published shortly with details.
+- Filenames containing spaces create duplicate entries in the games list.
+- Filenames containing spaces are listed with the spaces removed. Spaces should be replaced with under_scores.
+- Filanames with too many characters will not launch. There is a limit of 8 Characters + the extentsion.
+
+  Example: PLAY GAME.EXE - *Working! (*Spaces do not count as they are currently removed)
+  Example: Teenage Mutant Ninja Turtles.EXE - Not working!
+  It is recomended that if your files do contain spaces, to remove them or replace them with a hyphen "-", or an underscore "_".
+
+
+Found an issue not listed here? [Click Here](https://github.com/DNA64/DOSBoxES/issues) and fill out a report.
 
 
 ## Credits:
