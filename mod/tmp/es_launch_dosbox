@@ -25,12 +25,15 @@ case ${1} in
   *\ * )
   gamepath="$tmp_path"
   file_name="${1##*/}"
+  game_title="${file_name%.*}"
+  ext="${game_file##*.}"
 
   [ -L "$tmp_path" ] && unlink "$tmp_path"
   ln -s "${1%/*}" "$tmp_path"
 
-  if [[ ${#file_name} -gt 8 ]] ; then
-    normalized="$(echo -e "${file_name}" | tr -d '[:space:]' | cut -c-8 | tr '[:lower:]' '[:upper:]')"
+  if [[ ${#game_title} -gt 8 ]] ; then
+    trim="$(echo -e "${game_title}" | tr -d '[:space:]' | cut -c-8 | tr '[:lower:]' '[:upper:]')"
+    normalized=${trim}${ext}
   else
     normalized="$(echo -e "${file_name}" | tr -d '[:space:]')"
   fi
