@@ -5,4 +5,4 @@ launcher="${es_dir}/launch.sh"
 
 [ -f "${launcher}" ] && sed -i '/tmpgame/d' "${launcher}"
 
-sed -i -e '/SDL_VIDEODRIVER/r [ -L "/var/volatile/tmpgame" ] && unlink "/var/volatile/tmpgame"' "${es_dir}/launch.sh"
+sed -i -e '/SDL_VIDEODRIVER/i [ -L "/var/volatile/tmpgame" ] && unlink "/var/volatile/tmpgame"' "${es_dir}/launch.sh"
