@@ -17,7 +17,7 @@
 #
 PKG_PRETTY_NAME="DOSBox Standalone ES"
 PKG_NAME="dosbox-es-standalone"
-VERSION="1.0.1"
+
 PKG_CREATOR="DNA64"
 MAINTAINER="DNA64 <twitter.com/dna64>"
 PLATFORM="SONYPSC"
@@ -28,6 +28,16 @@ PREINST="${PKG_TARGET}/DEBIAN/preinst"
 POSTINST="${PKG_TARGET}/DEBIAN/postinst"
 POSTRM="${PKG_TARGET}/DEBIAN/postrm"
 CONTROL="${PKG_TARGET}/DEBIAN/control"
+
+VERSION=$([ -f VERSION ] && head VERSION || echo "0.0.1")
+
+MAJOR=$(echo ${VERSION} | sed "s/^\([0-9]*\).*/\1/")
+MINOR=$(echo ${VERSION} | sed "s/[0-9]*\.\([0-9]*\).*/\1/")
+PATCH=$(echo ${VERSION} | sed "s/[0-9]*\.[0-9]*\.\([0-9]*\).*/\1/")
+
+NEXT_MAJOR_VERSION="$(expr ${MAJOR} + 1).0.0"
+NEXT_MINOR_VERSION="${MAJOR}.$(expr ${MINOR} + 1)"
+NEXT_PATCH_VERSION="${MAJOR}.${MINOR}.$(expr ${PATCH} + 1)"
 
 modCreation() {
   mkdir -p "${PKG_TARGET}/DEBIAN"
@@ -55,7 +65,6 @@ modCreation() {
 
   rm -r ${PKG_TARGET:?}/
   touch ${PKG_TARGET}.mod
-
 }
 
 clean() {
@@ -66,9 +75,20 @@ case "$1" in
 clean)
   clean
   ;;
+minor)
+  clean
+  modCreation
+  echo "${NEXT_MINOR_VERSION}" > VERSION
+  ;;
+major)
+  clean
+  modCreation
+  echo "${NEXT_MAJOR_VERSION}" > VERSION
+  ;;
 *)
   clean
   modCreation
+  echo "${NEXT_PATCH_VERSION}" > VERSION
   ;;
 esac
 #EOF
