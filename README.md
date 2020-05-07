@@ -1,5 +1,7 @@
 # DOSBoxES
 ![Emulation Station with the Simple theme](https://i.imgur.com/ZQe1b3Y.png)
+[A short demo is availabe for viewing here](https://streamable.com/bt1x71)
+
 
 **NO RETROARCH REQUIRED!**
 
@@ -63,6 +65,9 @@ Known Exit Key Combos to return to ES:
 
 Got an question not listed here? Let us know and we'll do my best to answer it, and maybe even add it to the list.
 
+**Q:** How do I add boxart for the games?
+
+**A:** There are a number of ways to do this, and this is covered in many [tutorials for Emulation Station](https://www.youtube.com/watch?v=yuoCSnFP22A). However, you can [view a short clip HERE](https://streamable.com/bt1x71) that shows how to do this if you have the wifi mod. If you don't have the wifi mod, you can always connect your USB drive to your PC and use ES or another scraping tool to scrape the games, then connect it back to the PSC.
 
 ## Troubleshooting:
 
