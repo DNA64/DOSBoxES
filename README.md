@@ -1,5 +1,5 @@
 # DOSBoxES
-
+![Emulation Station with the Simple theme](https://i.imgur.com/ZQe1b3Y.png)
 
 **NO RETROARCH REQUIRED!**
 
@@ -18,7 +18,7 @@ Launch DOSBox games via Emulation Station using the [Stand Alone DOSBox release 
 
 - [Project Eris](https://modmyclassic.com/project-eris/)
 
-- [Stand Alone DOSBox release by ModMyClassic](https://classicmodscloud.com/project_eris/mods/1.0.0/dosbox_0.7.4_SONYPSC-cfb0146.mod)
+- [Standalone DOSBox release by ModMyClassic](https://classicmodscloud.com/project_eris/mods/1.0.0/dosbox_0.7.4_SONYPSC-cfb0146.mod)
 
 
 This will **NOT** work nor is it intended to work with the build of DOSBox that depends on RetroArch.
@@ -61,30 +61,21 @@ Known Exit Key Combos to return to ES:
 
 - `Ctrl`+`Q`
 
-
 Got an question not listed here? Let us know and we'll do my best to answer it, and maybe even add it to the list.
 
 
 ## Troubleshooting:
 
+#### Inaccurate number of games displayed, missing files not shown, or extra files displayed in menu.
+
+In order to keep the menu free and clear of all those unwanted additional files, Emulation Station will ONLY list files with a lowercase extentsion. Example: TMNTEGA.exe (Where as TNMNTEGA.EXE will not be displayed). You may need to reboot for these settings to take effect. In the event the changes do not take effect please delete the `gamelist.xml` file located in `/media/project_eris/opt/emulationstation/.emulationstation/gamelists/pc/`
+
 
 Not all games will work right out of the box so to speak. Some may require a special configuration file or initial installation or setup. The good news is, DOSBox has been around for a LONG LONG time. So there is already tons of valuable information out there to help you get these games working and troubleshoot any issues you might have. Also make sure your file isn't corrupted. You can do this by comparing it's checksum to a known good one found online.
 
-**Known Bugs, Issues & Limitations:**
+**Known bugs and other issues**
 
-
-- Number of "Games Available" is currently not accurate. We plan to address this in a future update, but there is a manual fix and a guide will be published shortly with details.
-- Filenames containing spaces create duplicate entries in the games list.
-- Filenames containing spaces are listed with the spaces removed. Spaces should be replaced with under_scores.
-- Filenames with too many characters will not launch. There is a limit of 8 Characters + the extension.
-
-  Example: PLAY GAME.EXE - *Working! (*Spaces do not count as they are currently removed)
-  
-  Example: Teenage Mutant Ninja Turtles.EXE - Not working!
-  
-  It is recommended that if your files do contain spaces, to remove them or replace them with a hyphen "-", or an underscore "_".
-
-
+- We've fixed all the ones we've found!
 Found an issue not listed here? [Click Here](https://github.com/DNA64/DOSBoxES/issues) and fill out a report.
 
 
