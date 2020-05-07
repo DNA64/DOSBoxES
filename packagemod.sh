@@ -31,6 +31,9 @@ CONTROL="${PKG_TARGET}/DEBIAN/control"
 
 VERSION=$([ -f VERSION ] && head VERSION || echo "0.0.1")
 
+LAST_TAG_COMMIT=$(git rev-list --tags --max-count=1)
+LAST_TAG=$(git describe --tags ${LAST_TAG_COMMIT})
+
 MAJOR=$(echo ${VERSION} | sed "s/^\([0-9]*\).*/\1/")
 MINOR=$(echo ${VERSION} | sed "s/[0-9]*\.\([0-9]*\).*/\1/")
 PATCH=$(echo ${VERSION} | sed "s/[0-9]*\.[0-9]*\.\([0-9]*\).*/\1/")
@@ -44,16 +47,16 @@ modCreation() {
   cp -rf mod/* ${PKG_TARGET}/
   {
     printf "%s\n" \
-    "Package: ${PKG_NAME}" \
-    "Version: ${VERSION}" \
-    "Architecture: ${ARCHITECTURE}" \
-    "Depends: ${DEPENDS}" \
-    "Maintainer: ${MAINTAINER}" \
-    "Description: ${PKG_PRETTY_NAME}"
-  cat mod_description.txt 
-  echo "Author: ${PKG_CREATOR}" 
-  echo "Platform: ${PLATFORM} ${ARCHITECTURE}" 
-  echo "Built: $(date)"
+      "Package: ${PKG_NAME}" \
+      "Version: ${VERSION}" \
+      "Architecture: ${ARCHITECTURE}" \
+      "Depends: ${DEPENDS}" \
+      "Maintainer: ${MAINTAINER}" \
+      "Description: ${PKG_PRETTY_NAME}"
+    cat mod_description.txt
+    echo "Author: ${PKG_CREATOR}"
+    echo "Platform: ${PLATFORM} ${ARCHITECTURE}"
+    echo "Built: $(date)"
   } >>${CONTROL}
 
   [ -f "preinst" ] && cp -rf preinst ${PREINST} && chmod 755 ${PREINST}
@@ -65,6 +68,11 @@ modCreation() {
 
   rm -r ${PKG_TARGET:?}/
   touch ${PKG_TARGET}.mod
+
+}
+
+checkVersion() {
+  echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'
 }
 
 clean() {
@@ -78,17 +86,20 @@ clean)
 minor)
   clean
   modCreation
-  echo "${NEXT_MINOR_VERSION}" > VERSION
+  echo "${NEXT_MINOR_VERSION}" >VERSION
   ;;
 major)
   clean
   modCreation
-  echo "${NEXT_MAJOR_VERSION}" > VERSION
+  echo "${NEXT_MAJOR_VERSION}" >VERSION
   ;;
 *)
   clean
   modCreation
-  echo "${NEXT_PATCH_VERSION}" > VERSION
+  echo "${NEXT_PATCH_VERSION}" >VERSION
+  if [ $(checkVersion ${VERSION}) -gt $(checkVersion ${LAST_TAG}) ]; then
+    git tag $VERSION
+  fi
   ;;
 esac
 #EOF
