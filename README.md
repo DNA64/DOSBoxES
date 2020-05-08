@@ -29,7 +29,7 @@ This will **NOT** work nor is it intended to work with the build of DOSBox that 
 ## Downloads:
 
 
-https://github.com/DNA64/DOSBoxES/releases/download/latest/dosbox-es-standalone_SONYPSC.mod
+https://github.com/DNA64/DOSBoxES/releases/latest/download/dosbox-es-standalone_SONYPSC.mod
 
 
 ## Installation:
