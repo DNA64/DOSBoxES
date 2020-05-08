@@ -10,7 +10,7 @@ if ! grep -q "DOSBox Standalone" "/media/project_eris/opt/emulationstation/.emul
   <name>pc</name>\
   <fullname>DOSBox Standalone</fullname>\
   <path>/media/roms/pc/</path>\
-  <extension>.sh .SH .exe .EXE .com .COM .bat .BAT</extension>\
+  <extension>.exe .com .bat</extension>\
   <command>es_launch_dosbox %ROM%</command>\
   <platform>pc</platform>\
   <theme>pc</theme>\
