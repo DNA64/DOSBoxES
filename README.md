@@ -35,14 +35,12 @@ https://github.com/DNA64/DOSBoxES/releases/latest/download/dosbox-es-standalone_
 ## Installation:
 
 
-To install simply download the Project Eris `.mod` package found under the releases tab and copy the file to the `/media/project_eris/mods` folder on the root of your USB drive.
+To install simply download the Project Eris `.mod` package found under the releases tab of the project page and copy the file to the `/media/project_eris/mods` folder on the root of your USB drive.
 
 
-Place your extracted DOS game folders in `/media/roms/pc`
+Place your extracted DOS game folders in `/media/roms/pc` ensuring the main executable used to launch the game is the only one in the folder with a lowercase file extension (.exe .com .bat). This will keep you menu nice and clean as shown in the demo above.
 
-
-Example: `/media/roms/pc/KEEN/KEEN.EXE`
-
+Example: `/media/roms/pc/KEEN/KEEN.exe`
 
 ## F.A.Q.:
 
