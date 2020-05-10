@@ -6,14 +6,14 @@ mv "/tmp/es_launch_dosbox" "/media/project_eris/opt/emulationstation/bin/es_laun
 
 if ! grep -q "DOSBox Standalone" "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"; then
   sed -i '/<\/systemList>/ i\
-<system>\
-  <name>pc</name>\
-  <fullname>DOSBox Standalone</fullname>\
-  <path>/media/roms/dosboxes/</path>\
-  <extension>.exe .com .bat</extension>\
-  <command>es_launch_dosbox %ROM%</command>\
-  <platform>pc</platform>\
-  <theme>dosboxes</theme>\
+<system>
+  <name>doxboxes</name>
+  <fullname>DOSBox Standalone</fullname>
+  <path>/media/roms/dosboxes/</path>
+  <extension>.exe .com .bat</extension>
+  <command>es_launch_dosbox %ROM%</command>
+  <platform>pc</platform>
+  <theme>dosboxes</theme>
 <\/system>\' "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"
 fi
 
