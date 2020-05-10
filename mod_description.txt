@@ -1,1 +1,1 @@
- Launch DOSBox games via Emulation Station using the Stand Alone DOSBox release by ModMyClassic.
+ Launch DOSBox games via Emulationstation using the Standalone DOSBox release by ModMyClassic.
