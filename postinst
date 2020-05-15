@@ -4,10 +4,7 @@ mv "/tmp/es_launch_dosbox" "/media/project_eris/opt/emulationstation/bin/es_laun
 
 THEME_SET="$(find "/media/project_eris/opt/emulationstation/.emulationstation/es_settings.cfg" -type f | xargs grep 'ThemeSet')"
 THEME_NAME="$(echo "${THEME_SET}" | cut -d '"' -f4)"
-THEME_IMG="$(find /media/project_eris/opt/emulationstation/.emulationstation/themes/$THEME_NAME -name ibmpc.svg)"
-[ -f "/media/project_eris/opt/emulationstation/.emulationstation/themes/$THEME_NAME/dosboxes/art/ibmpc.svg" ] && rm -f "/media/project_eris/opt/emulationstation/.emulationstation/themes/$THEME_NAME/dosboxes/art/ibmpc.svg"
 cp -r -f "/media/project_eris/opt/emulationstation/.emulationstation/themes/$THEME_NAME/pc" "/media/project_eris/opt/emulationstation/.emulationstation/themes/$THEME_NAME/dosboxes"
-mv "/tmp/dosboxes.svg" "$THEME_IMG"
 [ ! -d "/media/roms/dosboxes" ] && mkdir -p "/media/roms/dosboxes"
 
 if ! grep -q "DOSBox Standalone" "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"; then
