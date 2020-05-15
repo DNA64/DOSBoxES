@@ -35,12 +35,16 @@ https://github.com/DNA64/DOSBoxES/releases/latest/download/dosbox-es-standalone_
 ## Installation:
 
 
-To install simply download the Project Eris `.mod` package found under the releases tab of the project page and copy the file to the `/media/project_eris/mods` folder on the root of your USB drive.
+To install simply download the Project Eris `.mod` package found under the releases tab of the project page and copy the file to the `/media/project_eris/mods` folder on the root of your USB drive. Connect the USB drive to the PlayStation Classic and power the system on, the mod will automatically install. If you installed the mod over wireless, power the system off and back on to initiate the installation.
 
 
 Place your extracted DOS game folders in `/media/roms/dosboxes` ensuring the main executable used to launch the game is the only one in the folder with a lowercase file extension (.exe .com .bat). This will keep you menu nice and clean as shown in the demo above.
 
-Example: `/media/roms/pc/KEEN/KEEN.exe`
+Example: `/media/roms/dosboxes/KEEN/KEEN.exe`
+
+If you already have files in `/media/roms/pc/` you will notice you have a duplicated logo in your menu, this can be resolved by changing the logo in your current theme (where `THEME_NAME` is the name of the current theme you're using).
+
+`/media/project_eris/opt/emulationstation/.emulationstation/themes/THEME_NAME/dosboxes/`
 
 ## F.A.Q.:
 
@@ -71,7 +75,7 @@ Got an question not listed here? Let us know and we'll do my best to answer it, 
 
 #### Inaccurate number of games displayed, missing files not shown, or extra files displayed in menu.
 
-In order to keep the menu free and clear of all those unwanted additional files, Emulationstation will ONLY list files with a lowercase extentsion. Example: TMNTEGA.exe (Where as TNMNTEGA.EXE will not be displayed). You may need to reboot for these settings to take effect. In the event the changes do not take effect please delete the `gamelist.xml` file located in `/media/project_eris/opt/emulationstation/.emulationstation/gamelists/dosboxes/`
+In order to keep the menu free and clear of all those unwanted additional files, Emulationstation will ONLY list files with a lowercase extension. Example: TMNTEGA.exe (Where as TNMNTEGA.EXE will not be displayed). You may need to reboot for these settings to take effect. In the event the changes do not take effect please delete the `gamelist.xml` file located in `/media/project_eris/opt/emulationstation/.emulationstation/gamelists/dosboxes/`
 
 
 Not all games will work right out of the box so to speak. Some may require a special configuration file or initial installation or setup. The good news is, DOSBox has been around for a LONG LONG time. So there is already tons of valuable information out there to help you get these games working and troubleshoot any issues you might have. Also make sure your file isn't corrupted. You can do this by comparing it's checksum to a known good one found online.
@@ -110,3 +114,4 @@ What started out as a solo project of mine, ended up becoming a team effort betw
 
 
 DefKorns graciously offered to help out and I accepted, and he has been invaluable to the project and an absolute pleasure to work with as always. It took some back and forth ideas for us to perfect it, taking into account things like possible spaces in both folder and filenames as well as few other obstacles, but the end result is this project. - Enjoy!
+
