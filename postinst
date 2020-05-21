@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mv "/tmp/es_launch_dosbox" "/media/project_eris/opt/emulationstation/bin/es_launch_dosbox"
+mv -f "/tmp/es_launch_dosbox" "/media/project_eris/opt/emulationstation/bin/es_launch_dosbox"
 
 THEME_SET="$(find "/media/project_eris/opt/emulationstation/.emulationstation/es_settings.cfg" -type f | xargs grep 'ThemeSet')"
 THEME_NAME="$(echo "${THEME_SET}" | cut -d '"' -f4)"
