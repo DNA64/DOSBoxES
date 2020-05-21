@@ -82,7 +82,7 @@ Not all games will work right out of the box so to speak. Some may require a spe
 
 **Known bugs and other issues**
 
-- We've fixed all the ones we've found!
+- "sed: unsupported command <" - mod fails to edit es_systems.cfg. You'll need to do this manually till we fix it.
 Found an issue not listed here? [Click Here](https://github.com/DNA64/DOSBoxES/issues) and fill out a report.
 
 
