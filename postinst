@@ -8,16 +8,16 @@ cp -r -f "/media/project_eris/opt/emulationstation/.emulationstation/themes/$THE
 [ ! -d "/media/roms/dosboxes" ] && mkdir -p "/media/roms/dosboxes"
 
 if ! grep -q "DOSBox Standalone" "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"; then
-  sed -i '/<\/systemList>/ i\
-<system>
-  <name>doxboxes</name>
-  <fullname>DOSBox Standalone</fullname>
-  <path>/media/roms/dosboxes/</path>
-  <extension>.exe .com .bat</extension>
-  <command>es_launch_dosbox %ROM%</command>
-  <platform>pc</platform>
-  <theme>dosboxes</theme>
-<\/system>\' "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"
+sed -i '/<\/systemList>/i \
+<system> \
+  <name>doxboxes</name> \
+  <fullname>DOSBox Standalone</fullname> \
+  <path>/media/roms/dosboxes/</path> \
+  <extension>.exe .com .bat</extension> \
+  <command>es_launch_dosbox %ROM%</command> \
+  <platform>pc</platform> \
+  <theme>dosboxes</theme> \
+</system>' "/media/project_eris/opt/emulationstation/.emulationstation/es_systems.cfg"
 fi
 
 [ ! -f "/media/project_eris/etc/project_eris/CFG/project_eris_cfg.INI" ] && cp "/media/project_eris/etc/project_eris/CFG/project_eris_cfg_DEFAULT.INI" "/media/project_eris/etc/project_eris/CFG/project_eris_cfg.INI"
