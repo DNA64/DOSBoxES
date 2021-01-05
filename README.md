@@ -1,5 +1,6 @@
 # DOSBoxES
 ![Emulation Station with the Simple theme](https://i.imgur.com/ZQe1b3Y.png)
+
 [A short demo is available for viewing here](https://streamable.com/bt1x71)
 
 
